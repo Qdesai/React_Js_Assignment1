@@ -7,16 +7,16 @@ export default function MyCompenent(){
     
     const [temp, setCount]  = useState(0);
     const [conTemp, setValue]  = useState(0);
-    const [tempVal, setVal] = useState("F");
+    const [tempVal, setVal] = useState("Fahrenheit");
     const [atmos, setAtmos] = useState("Auto Mode");
 
 
     function convertTemp(){
-        if (tempVal === "F"){
+        if (tempVal === "Fahrenheit"){
             setValue(temp*1.8+32)
         }
 
-        if (tempVal === "C"){
+        if (tempVal === "Celsius"){
             setValue((temp-32)*0.5556)
         }
     }
@@ -30,12 +30,12 @@ export default function MyCompenent(){
             <h3><center>{temp}</center></h3>
             <h3><center>The Temprature is: {conTemp} {tempVal}</center></h3>
             <center>
-            <button onClick={()=>{setCount(temp+5)}}>+</button>
+            <button onClick={()=>{setCount(temp+5)}}>+</button>&nbsp;
             <button onClick={()=>{setCount(temp-5)}}>-</button>
             </center><br/>
             <center>
-                <button onClick={()=>{(setVal("F"))}}>Fahrenheit</button>
-                <button onClick={()=>{(setVal("C"))}}>Celsius</button>
+                <button onClick={()=>{(setVal("Fahrenheit"))}}>Fahrenheit</button>
+                <button onClick={()=>{(setVal("Celsius"))}}>Celsius</button>
                 <p>Convert to <strong>{tempVal}</strong> <button onClick={()=>{convertTemp()}}>Convert</button></p>
             </center><br/>
             <hr></hr>
